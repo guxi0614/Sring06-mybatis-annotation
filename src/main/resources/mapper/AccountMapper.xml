@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ldy.mapper.AccountMapper">
+
+    <select id="getAccountById" resultType="com.ldy.pojo.Account">
+        SELECT * FROM account WHERE ac_id = #{acId}
+    </select>
+
+    <select id="getAllAccounts" resultType="com.ldy.pojo.Account">
+        SELECT * FROM account
+    </select>
+
+    <insert id="insertAccount" useGeneratedKeys="true" keyProperty="acId">
+        INSERT INTO account(ac_name, balance) VALUES(#{acName}, #{balance})
+    </insert>
+
+    <update id="updateAccount">
+        UPDATE account SET ac_name = #{acName}, balance = #{balance} WHERE ac_id = #{acId}
+    </update>
+
+    <delete id="deleteAccount">
+        DELETE FROM account WHERE ac_id = #{acId}
+    </delete>
+</mapper>

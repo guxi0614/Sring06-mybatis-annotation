@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 导入properties文件 -->
+    <properties resource="db.properties"/>
+    <settings>
+        <!-- 开启Mybatis的日志功能-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- 开启驼峰命名规则 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 一级缓存 -->
+        <setting name="localCacheScope" value="SESSION"/>
+    </settings>
+    <typeAliases>
+        <!-- 扫描包下所有类，自动映射 -->
+        <package name="com.bk.pojo"/>
+    </typeAliases>
+    <!-- 分页插件 -->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+    <!-- 数据库的环境 -->
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--        <mapper resource="com/cwb/mapper/StudentMapper.xml"/>-->
+        <package name="com.bk.mapper"/>
+    </mappers>
+</configuration>
