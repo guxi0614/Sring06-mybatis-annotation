@@ -1,25 +1,25 @@
    package com.ldy.pojo;
 
    public class Account {
-       private int id;
-       private String name;
+       private int acId;
+       private String acName;
        private double balance;
 
        // Getters and Setters
-       public int getId() {
-           return id;
+       public int getAcId() {
+           return acId;
        }
 
-       public void setId(int id) {
-           this.id = id;
+       public void setAcId(int acId) {
+           this.acId = acId;
        }
 
-       public String getName() {
-           return name;
+       public String getAcName() {
+           return acName;
        }
 
-       public void setName(String name) {
-           this.name = name;
+       public void setAcName(String acName) {
+           this.acName = acName;
        }
 
        public double getBalance() {
@@ -33,8 +33,8 @@
        @Override
        public String toString() {
            return "Account{" +
-                   "id=" + id +
-                   ", name='" + name + '\'' +
+                   "acId=" + acId +
+                   ", acName='" + acName + '\'' +
                    ", balance=" + balance +
                    '}';
        }

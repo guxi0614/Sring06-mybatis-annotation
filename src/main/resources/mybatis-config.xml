@@ -15,7 +15,7 @@
     </settings>
     <typeAliases>
         <!-- 扫描包下所有类，自动映射 -->
-        <package name="com.bk.pojo"/>
+        <package name="com.ldy.pojo"/>
     </typeAliases>
     <!-- 分页插件 -->
     <plugins>
@@ -35,6 +35,6 @@
     </environments>
     <mappers>
 <!--        <mapper resource="com/cwb/mapper/StudentMapper.xml"/>-->
-        <package name="com.bk.mapper"/>
+        <package name="com.ldy.mapper"/>
     </mappers>
 </configuration>
